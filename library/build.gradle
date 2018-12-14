@@ -4,8 +4,6 @@ apply plugin: 'maven'
 android {
     compileSdkVersion 27
 
-
-
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 27
