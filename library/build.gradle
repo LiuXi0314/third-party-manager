@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven'
 
 android {
     compileSdkVersion 27
@@ -27,4 +28,8 @@ android {
 dependencies {
     //wechat
     implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.1.4'
+}
+
+repositories {
+    mavenCentral()
 }
