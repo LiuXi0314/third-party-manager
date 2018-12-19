@@ -5,11 +5,11 @@ third-party-manager
 
 第三方平台功能集合
 
-**How to**
+### How to
 
 To get a Git project into your build:
 
-**Gradle:**
+## Gradle:
 
 **Step 1.** Add the JitPack repository to your build file
 
@@ -28,7 +28,7 @@ allprojects {
 	        implementation 'com.github.LiuXi0314:third-party-manager:0.0.2'
 	}
 ```
-###使用说明
+### 使用说明
 
 [wiki](https://github.com/LiuXi0314/third-party-manager/wiki)
 
