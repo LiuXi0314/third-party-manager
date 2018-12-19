@@ -5,8 +5,6 @@ third-party-manager
 
 第三方平台功能集合
 
-### Using in your projects
-
 ## Gradle:
 
 **Step 1.** Add the JitPack repository to your build file
