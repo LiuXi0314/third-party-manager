@@ -40,7 +40,10 @@ public class TPManager {
      */
     public void register(Application app) {
         mApplication = app;
-        WeChatHelper.getInstance().register(app);
+        if (mWXDelegate != null) {
+            //微信注册
+            WeChatHelper.getInstance().register(app);
+        }
     }
 
     /**

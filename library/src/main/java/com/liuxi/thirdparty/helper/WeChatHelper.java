@@ -32,9 +32,15 @@ public class WeChatHelper {
     }
 
     public void register(Application context) {
+
+        if (TPManager.get().getWeChatDelegate() == null) {
+            return;
+        }
+
         if (mAPi != null) {
             return;
         }
+
         mAPi = WXAPIFactory.createWXAPI(context, TPManager.get().getWeChatDelegate().APP_KEY(), false);
         mAPi.registerApp(TPManager.get().getWeChatDelegate().APP_KEY());
     }
