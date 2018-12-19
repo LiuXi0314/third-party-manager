@@ -5,7 +5,7 @@ third-party-manager
 
 第三方平台功能集合
 
-To get a Git project into your build:
+### Using in your projects
 
 ## Gradle:
 
