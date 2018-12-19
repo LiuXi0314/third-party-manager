@@ -2,10 +2,10 @@ package com.liuxi.thirdparty;
 
 import android.app.Activity;
 import android.app.Application;
-import com.liuxi.thirdparty.config.WeChatConfig;
-import com.liuxi.thirdparty.model.ShareModel;
+import com.liuxi.thirdparty.delegate.WXDelegate;
+import com.liuxi.thirdparty.helper.WeChatHelper;
 import com.liuxi.thirdparty.share.Platform;
-import com.liuxi.thirdparty.share.ShareDelegate;
+import com.liuxi.thirdparty.share.model.ShareModel;
 import com.liuxi.thirdparty.share.task.WeChatShareTask;
 
 import java.lang.ref.WeakReference;
@@ -19,8 +19,7 @@ import java.lang.ref.WeakReference;
 public class TPManager {
 
     private static TPManager mInstance;
-    private ShareDelegate mShareDelegate;
-    private WeChatConfig mWeChatDelegate;
+    private WXDelegate mWXDelegate;
     private Application mApplication;
 
     public static TPManager get() {
@@ -41,19 +40,7 @@ public class TPManager {
      */
     public void register(Application app) {
         mApplication = app;
-        WeChatManager.getInstance().register(app);
-    }
-
-    public Application getApplication() {
-        return mApplication;
-    }
-
-    public ShareDelegate getShareDelegate() {
-        return mShareDelegate;
-    }
-
-    public WeChatConfig getWeChatDelegate() {
-        return mWeChatDelegate;
+        WeChatHelper.getInstance().register(app);
     }
 
     /**
@@ -62,21 +49,20 @@ public class TPManager {
      *
      * @param delegate
      */
-    public void inject(WeChatConfig delegate) {
-        mWeChatDelegate = delegate;
+    public void inject(WXDelegate delegate) {
+        mWXDelegate = delegate;
     }
 
-    /**
-     * 注入分享参数
-     * 使用分享功能时推荐调用
-     *
-     * @param delegate
-     */
-    public void inject(ShareDelegate delegate) {
-        mShareDelegate = delegate;
+    public Application getApplication() {
+        return mApplication;
+    }
+
+    public WXDelegate getWeChatDelegate() {
+        return mWXDelegate;
     }
 
     private TPManager() {
+
     }
 
     /**

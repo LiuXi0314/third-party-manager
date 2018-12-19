@@ -1,11 +1,9 @@
 package com.liuxi.thirdparty.share.task;
 
 import android.app.Activity;
-import com.liuxi.thirdparty.TPManager;
-import com.liuxi.thirdparty.model.ShareImageModel;
-import com.liuxi.thirdparty.model.ShareLinkModel;
-import com.liuxi.thirdparty.model.ShareModel;
-import com.liuxi.thirdparty.share.ShareDelegate;
+import com.liuxi.thirdparty.share.model.ShareImageModel;
+import com.liuxi.thirdparty.share.model.ShareLinkModel;
+import com.liuxi.thirdparty.share.model.ShareModel;
 
 import java.lang.ref.WeakReference;
 
@@ -53,13 +51,5 @@ public abstract class ShareTask {
      */
     abstract void share(ShareImageModel model);
 
-    /**
-     * 获取分享实现类参数与方法
-     *
-     * @return
-     */
-    ShareDelegate getDelegate() {
-        return TPManager.get().getShareDelegate();
-    }
 
 }

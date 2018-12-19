@@ -2,9 +2,10 @@ package com.liuxi.thirdparty.share.task;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
-import com.liuxi.thirdparty.WeChatManager;
-import com.liuxi.thirdparty.model.ShareImageModel;
-import com.liuxi.thirdparty.model.ShareLinkModel;
+import com.liuxi.thirdparty.TPManager;
+import com.liuxi.thirdparty.helper.WeChatHelper;
+import com.liuxi.thirdparty.share.model.ShareImageModel;
+import com.liuxi.thirdparty.share.model.ShareLinkModel;
 import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
 import com.tencent.mm.opensdk.modelmsg.WXImageObject;
 import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
@@ -31,9 +32,9 @@ public class WeChatShareTask extends ShareTask {
     @Override
     void share(ShareLinkModel linkModel) {
 
-        IWXAPI iwxapi = WeChatManager.getInstance().getAPi();
+        IWXAPI iwxapi = WeChatHelper.getInstance().getAPi();
         if (iwxapi != null && !iwxapi.isWXAppInstalled()) {
-            getDelegate().wechatNotInstalled();
+            TPManager.get().getWeChatDelegate().wechatNotInstalled();
             return;
         }
 
@@ -47,8 +48,6 @@ public class WeChatShareTask extends ShareTask {
         Bitmap bitmap = null;
         if (linkModel.icon != null) {
             bitmap = linkModel.icon;
-        } else {
-            bitmap = getDelegate().defaultImageResId();
         }
         if (bitmap != null) {
             message.setThumbImage(bitmap);
@@ -61,9 +60,9 @@ public class WeChatShareTask extends ShareTask {
     void share(ShareImageModel model) {
         if (model == null) return;
 
-        IWXAPI iwxapi = WeChatManager.getInstance().getAPi();
+        IWXAPI iwxapi = WeChatHelper.getInstance().getAPi();
         if (iwxapi != null && !iwxapi.isWXAppInstalled()) {
-            getDelegate().wechatNotInstalled();
+            TPManager.get().getWeChatDelegate().wechatNotInstalled();
             return;
         }
         WXImageObject shareObject = new WXImageObject(model.getImageBitmap());
@@ -79,7 +78,7 @@ public class WeChatShareTask extends ShareTask {
         req.transaction = buildTransaction("image");
         req.message = message;
         req.scene = isFriend ? SendMessageToWX.Req.WXSceneSession : SendMessageToWX.Req.WXSceneTimeline;//好友／朋友圈
-        WeChatManager.getInstance().getAPi().sendReq(req);
+        WeChatHelper.getInstance().getAPi().sendReq(req);
     }
 
 

@@ -1,31 +1,33 @@
-package com.liuxi.thirdparty;
+package com.liuxi.thirdparty.helper;
 
 import android.app.Application;
+import com.liuxi.thirdparty.TPManager;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
 
 /**
+ * 微信工具类
  * Created by liuxi on 2018/3/14.
  */
 
-public class WeChatManager {
+public class WeChatHelper {
 
     private IWXAPI mAPi;
-    private static WeChatManager mInstance = null;
+    private static WeChatHelper mInstance = null;
 
-    public static WeChatManager getInstance() {
+    public static WeChatHelper getInstance() {
         if (mInstance == null) {
-            synchronized (WeChatManager.class) {
+            synchronized (WeChatHelper.class) {
                 if (mInstance == null) {
-                    mInstance = new WeChatManager();
+                    mInstance = new WeChatHelper();
                 }
             }
         }
         return mInstance;
     }
 
-    private WeChatManager() {
+    private WeChatHelper() {
 
     }
 

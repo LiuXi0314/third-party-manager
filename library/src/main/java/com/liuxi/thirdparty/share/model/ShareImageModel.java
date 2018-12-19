@@ -1,4 +1,4 @@
-package com.liuxi.thirdparty.model;
+package com.liuxi.thirdparty.share.model;
 
 import android.graphics.Bitmap;
 
