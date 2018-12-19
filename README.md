@@ -26,5 +26,5 @@ allprojects {
 ```
 ### 使用说明
 
-[wiki](https://github.com/LiuXi0314/third-party-manager/wiki)
+[wiki](https://github.com/LiuXi0314/third-party-manager/wiki/%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97)
 
