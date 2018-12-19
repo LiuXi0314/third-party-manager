@@ -1,7 +1,7 @@
 third-party-manager
 ===========
 
-TAG: [![](https://jitpack.io/v/LiuXi0314/third-party-manager.svg)](https://jitpack.io/#LiuXi0314/third-party-manager)
+[![](https://jitpack.io/v/LiuXi0314/third-party-manager.svg)](https://jitpack.io/#LiuXi0314/third-party-manager)
 
 第三方平台功能集合
 
@@ -21,7 +21,7 @@ allprojects {
 **Step 2.** Add the dependency:
 ```
 	dependencies {
-	        implementation 'com.github.LiuXi0314:third-party-manager:TAG'
+	        implementation 'com.github.LiuXi0314:third-party-manager:0.0.6'
 	}
 ```
 ### 使用说明
