@@ -40,10 +40,6 @@ public class TPManager {
      */
     public void register(Application app) {
         mApplication = app;
-        if (mWXDelegate != null) {
-            //微信注册
-            WeChatHelper.getInstance().register(app);
-        }
     }
 
     /**
@@ -54,6 +50,10 @@ public class TPManager {
      */
     public void inject(WXDelegate delegate) {
         mWXDelegate = delegate;
+        if (mWXDelegate != null && mApplication != null) {
+            //微信注册
+            WeChatHelper.getInstance().register(mApplication);
+        }
     }
 
     public Application getApplication() {
