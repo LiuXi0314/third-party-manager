@@ -21,7 +21,7 @@ allprojects {
 **Step 2.** Add the dependency:
 ```
 	dependencies {
-	        implementation 'com.github.LiuXi0314:third-party-manager:0.0.6'
+	        implementation 'com.github.LiuXi0314:third-party-manager:0.0.7'
 	}
 ```
 ### 使用说明
